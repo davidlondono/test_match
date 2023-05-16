@@ -113,24 +113,28 @@ const algoRecursiveNoSet = (list, goal) => {
 }
 
 const algoContains = (list, goal) => {
-    const set = new Set();
+    const set = new Set(list);
     const pairs = [];
     let listed = [...new Set(list)];
     for (let i = 0; i < listed.length; i++) {
         if (set.has(goal - listed[i])) {
             pairs.push([listed[i], goal - listed[i]]);
+            set.delete(goal - listed[i]);
+            set.delete(listed[i]);
         }
     }
     return pairs;
 }
 
 const algoContainsNoSet = (list, goal) => {
-    const set = new Set();
+    const set = new Set(list);
     const pairs = [];
     let listed = list;
     for (let i = 0; i < listed.length; i++) {
         if (set.has(goal - listed[i])) {
             pairs.push([listed[i], goal - listed[i]]);
+            set.delete(goal - listed[i]);
+            set.delete(listed[i]);
         }
     }
     return pairs;
