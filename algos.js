@@ -112,10 +112,36 @@ const algoRecursiveNoSet = (list, goal) => {
     return pairs;
 }
 
+const algoContains = (list, goal) => {
+    const set = new Set();
+    const pairs = [];
+    let listed = [...new Set(list)];
+    for (let i = 0; i < listed.length; i++) {
+        if (set.has(goal - listed[i])) {
+            pairs.push([listed[i], goal - listed[i]]);
+        }
+    }
+    return pairs;
+}
+
+const algoContainsNoSet = (list, goal) => {
+    const set = new Set();
+    const pairs = [];
+    let listed = list;
+    for (let i = 0; i < listed.length; i++) {
+        if (set.has(goal - listed[i])) {
+            pairs.push([listed[i], goal - listed[i]]);
+        }
+    }
+    return pairs;
+}
+
 
 module.exports = {
     algoBruteForce,
     algoSet,
     algoRecursive,
     algoRecursiveNoSet,
+    algoContains,
+    algoContainsNoSet
 }

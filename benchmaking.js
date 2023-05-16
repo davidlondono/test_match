@@ -2,7 +2,9 @@ const {
     algoSet,
     algoBruteForce,
     algoRecursive,
-    algoRecursiveNoSet
+    algoRecursiveNoSet,
+    algoContains,
+    algoContainsNoSet
 } = require('./algos');
 
 
@@ -26,6 +28,8 @@ const PrepareTest = () => {
     runBenchmark('algoBruteForce', () => algoBruteForce(list, goal));
     runBenchmark('algoRecursive', () => algoRecursive(list, goal));
     runBenchmark('algoRecursiveNoSet', () => algoRecursiveNoSet(list, goal));
+    runBenchmark('algoContains', () => algoContains(list, goal));
+    runBenchmark('algoContainsNoSet', () => algoContainsNoSet(list, goal));
 }
 
 PrepareTest();

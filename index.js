@@ -1,7 +1,6 @@
 
 const {
-    algoRecursiveNoSet,
-    algoBruteForce
+    algoContainsNoSet,
 } = require('./algos');
 
 
@@ -11,4 +10,4 @@ const parsedList = list.split(',').map(Number);
 const parsedGoal = Number(goal);
 
 
-algoRecursiveNoSet(parsedList, parsedGoal).forEach(([i,j]) => console.log(`${i},${j}`));
+algoContainsNoSet(parsedList, parsedGoal).forEach(([i,j]) => console.log(`${i},${j}`));
